@@ -3,6 +3,7 @@ package Pojos;
 
 public class Proyecto {
     
+    private String ID;
     private String nombre;
     private String descripcion;
     private String emailUsuario;
@@ -13,6 +14,14 @@ public class Proyecto {
         this.emailUsuario = emailUsuario;
     }
 
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+    
     public String getNombre() {
         return nombre;
     }

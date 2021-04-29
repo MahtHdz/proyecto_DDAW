@@ -1,8 +1,23 @@
+@font-face {
+  font-family: SF;
+  src: url(../fonts/SystemSanFranciscoDisplayRegular.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: SF;
+  src: url(../fonts/SF-UI-Display-Bold.otf) format("opentype");
+  font-weight: bold;
+}
+
 html,
 body {
-  font-family: sans-serif;
   font-smoothing: antialiased;
   height: 100%;
+}
+
+h2, h3{
+  font-family: 'SF';
+  font-weight: bold;
 }
 
 a {
@@ -122,6 +137,7 @@ a {
 }
 
 .panel-footer{
+  font-family: sans-serif;
   background-color:white;
   text-align: justify;
 }
@@ -134,4 +150,28 @@ a {
   background-color: black;
   color: white;
   text-align: right;
+}
+
+#header a{
+  font-family: 'SF';
+}
+
+/* unvisited link */
+#header a:link {
+  color: white;
+}
+
+/* visited link */
+#header a:visited {
+  color: red;
+}
+
+/* mouse over link */
+#header a:hover {
+  color: #00d10a;
+}
+
+/* selected link */
+#header a:active {
+  color: #4a4aff;
 }

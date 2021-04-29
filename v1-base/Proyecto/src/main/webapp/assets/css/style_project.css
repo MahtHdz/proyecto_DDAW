@@ -178,3 +178,11 @@ body .options .option .label .info .main {
 body .options .option .label .info .sub {
   transition-delay: 0.1s;
 }
+
+#cards{
+    background-image: url(../images/crc_cards.png)
+}
+
+#stories{
+    background-image: url(../images/user_stories.png)
+}

@@ -17,7 +17,7 @@
 <body>
     <div class="options">
         <!--Checar optionBackground para que se muestren las imágenes-->
-        <div class="option active" style="--optionBackground:url(assets/images/crc_cards.png)">
+        <div id="cards" class="option active">
             <div class="shadow"></div>
             <div class="label">
                 <div class="icon">
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="option" style="--optionBackground: url(assets/images/user_stories.png)">
+        <div id="stories" class="option">
             <div class="shadow"></div>
             <div class="label">
                 <div class="icon">
