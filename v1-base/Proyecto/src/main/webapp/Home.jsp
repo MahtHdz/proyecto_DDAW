@@ -49,7 +49,9 @@ String emailUsuario = (String)session.getAttribute("email");
             </div>
         </div>
     </div>
-    
+    <%
+        out.println("<script>localStorage.setItem('user_email', '"+ emailUsuario +"');</script>");
+    %>
     <!-- partial -->
     <script src='assets/js/libs/jquery-home.min.js'></script>
     <script src='assets/js/libs/bootstrap-home.min.js'></script>
