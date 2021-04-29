@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2021 a las 22:59:08
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.3.10
+-- Host: 127.0.0.1
+-- Generation Time: Apr 29, 2021 at 08:58 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `proyecto`
+-- Database: `proyecto`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `historia_usuario`
+-- Table structure for table `historia_usuario`
 --
 
 CREATE TABLE `historia_usuario` (
@@ -42,29 +41,44 @@ CREATE TABLE `historia_usuario` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `proyecto`
+-- Table structure for table `proyecto`
 --
 
 CREATE TABLE `proyecto` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
-  `emailUsuario` varchar(50) NOT NULL
+  `emailUsuario` varchar(50) NOT NULL,
+  `id_elemento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `proyecto`
+-- Dumping data for table `proyecto`
 --
 
-INSERT INTO `proyecto` (`id`, `nombre`, `descripcion`, `emailUsuario`) VALUES
-(1, 'Proyecto X', 'Primer proyecto de prueba 1.', 'admin@correo.com'),
-(2, 'Proyecto Y', 'Proyecto de prueba 2 asiudgahsdhasdlñkasdñjsalkdasñldsadasd', 'admin@correo.com'),
-(3, 'Proyecto A', 'Proyecto de prueba para otro usuario', 'david@correo.com');
+INSERT INTO `proyecto` (`id`, `nombre`, `descripcion`, `emailUsuario`, `id_elemento`) VALUES
+(1, 'Proyecto X', 'Primer proyecto de prueba 1.', 'admin@correo.com', 0),
+(2, 'Proyecto Y', 'Proyecto de prueba 2 asiudgahsdhasdlñkasdñjsalkdasñldsadasd', 'admin@correo.com', 0),
+(3, 'Proyecto A', 'Proyecto de prueba para otro usuario', 'david@correo.com', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `tarjeta_crc`
+-- Table structure for table `tabla_crc`
+--
+
+CREATE TABLE `tabla_crc` (
+  `id` int(11) NOT NULL,
+  `responsabilidad` varchar(50) NOT NULL,
+  `colaborador` varchar(50) NOT NULL,
+  `id_proyecto` int(30) NOT NULL,
+  `id_usuario` int(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tarjeta_crc`
 --
 
 CREATE TABLE `tarjeta_crc` (
@@ -72,28 +86,13 @@ CREATE TABLE `tarjeta_crc` (
   `clase` varchar(50) NOT NULL,
   `lista_super` varchar(50) NOT NULL,
   `lista_sub` varchar(50) NOT NULL,
-  `res1` varchar(50) NOT NULL,
-  `res2` varchar(50) NOT NULL,
-  `res3` varchar(50) NOT NULL,
-  `res4` varchar(50) NOT NULL,
-  `res5` varchar(50) NOT NULL,
-  `res6` varchar(50) NOT NULL,
-  `res7` varchar(50) NOT NULL,
-  `res8` varchar(50) NOT NULL,
-  `colab1` varchar(50) NOT NULL,
-  `colab2` varchar(50) NOT NULL,
-  `colab3` varchar(50) NOT NULL,
-  `colab4` varchar(50) NOT NULL,
-  `colab5` varchar(50) NOT NULL,
-  `colab6` varchar(50) NOT NULL,
-  `colab7` varchar(50) NOT NULL,
-  `colab8` varchar(50) NOT NULL
+  `id_tabla` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -103,7 +102,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`id`, `email`, `password`) VALUES
@@ -111,30 +110,39 @@ INSERT INTO `usuario` (`id`, `email`, `password`) VALUES
 (2, 'david@correo.com', '1234');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `historia_usuario`
+-- Indexes for table `historia_usuario`
 --
 ALTER TABLE `historia_usuario`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `numero` (`numero`);
 
 --
--- Indices de la tabla `proyecto`
+-- Indexes for table `proyecto`
 --
 ALTER TABLE `proyecto`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `tarjeta_crc`
+-- Indexes for table `tabla_crc`
 --
-ALTER TABLE `tarjeta_crc`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `tabla_crc`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_proyecto` (`id_proyecto`),
+  ADD KEY `id_usuario` (`id_usuario`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `tarjeta_crc`
+--
+ALTER TABLE `tarjeta_crc`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_tabla` (`id_tabla`);
+
+--
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`),
@@ -142,32 +150,55 @@ ALTER TABLE `usuario`
   ADD UNIQUE KEY `pass` (`password`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `historia_usuario`
+-- AUTO_INCREMENT for table `historia_usuario`
 --
 ALTER TABLE `historia_usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `proyecto`
+-- AUTO_INCREMENT for table `proyecto`
 --
 ALTER TABLE `proyecto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de la tabla `tarjeta_crc`
+-- AUTO_INCREMENT for table `tabla_crc`
+--
+ALTER TABLE `tabla_crc`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tarjeta_crc`
 --
 ALTER TABLE `tarjeta_crc`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tabla_crc`
+--
+ALTER TABLE `tabla_crc`
+  ADD CONSTRAINT `id_proyecto` FOREIGN KEY (`id_proyecto`) REFERENCES `proyecto` (`id`),
+  ADD CONSTRAINT `id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`);
+
+--
+-- Constraints for table `tarjeta_crc`
+--
+ALTER TABLE `tarjeta_crc`
+  ADD CONSTRAINT `id_tabla` FOREIGN KEY (`id_tabla`) REFERENCES `tabla_crc` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
