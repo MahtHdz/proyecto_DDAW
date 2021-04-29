@@ -32,16 +32,15 @@ String emailUsuario = (String)session.getAttribute("email");
                 <%
                     ObtenerProyectos obtenerProyectos = new ObtenerProyectos(emailUsuario);
                     for( Proyecto proyecto : obtenerProyectos.obtenerListaProyectos() ){
-//                        out.println("<form action='Project'>");
                             out.println("<div class='col-md-4'>");
                                 out.println("<div class='panel panel-default fixed-width center-block' data-toggle='modal' data-target='#projectA'>");
                                     out.println("<div class='panel-body'>");
-                                        out.println("<a href='Project'>");
+                                        out.println("<a href='http://localhost:8080/Proyecto/Project.jsp?idProyecto="+proyecto.getID()+"'>");
                                             out.println("<img class='img-responsive center-block' src='http://placeimg.com/600/480/tech/1' />");
                                         out.println("</a>");
                                     out.println("</div>");
                                     out.println("<div class='panel-footer'>");
-                                        out.println("<a href='Project'>");
+                                        out.println("<a href='http://localhost:8080/Proyecto/Project.jsp?idProyecto="+proyecto.getID()+"'>");
                                             out.println("<h3>"+proyecto.getNombre()+"</h3>");
                                         out.println("</a>");
                                         out.println("<p>"+proyecto.getDescripcion()+"</p>");
@@ -49,7 +48,6 @@ String emailUsuario = (String)session.getAttribute("email");
                             out.println("<button type='submit' name='idProyecto' class='btn btn-success' onclick='obtenerId(\""+proyecto.getID()+"\")'>"+proyecto.getID()+"</button>");
                                 out.println("</div>");
                             out.println("</div>");
-//                        out.println("<form>");
                     }
                 %>
             </div>
@@ -69,6 +67,5 @@ String emailUsuario = (String)session.getAttribute("email");
     <script src='assets/js/libs/bootstrap-home.min.js'></script>
     <script src='assets/js/libs/touchSwipe.min.js'></script>
     <script src="assets/js/script_home.js"></script>
-    <!--<script src="assets/js/home-main.js"></script>-->
 </body>
 </html>

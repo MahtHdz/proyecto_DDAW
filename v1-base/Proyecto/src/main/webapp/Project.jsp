@@ -55,7 +55,7 @@
                     <img src="assets/images/user_stories_icon.png" alt="">
                 </div>
                 <div class="info">
-                    <div class="main"><a href="user-stories/menu.html">Historias de usuario</a></div>
+                    <div class="main"><a href="MenuHistorias.jsp">Historias de usuario</a></div>
                     <div class="sub">Edita y crea historias de usuario.</div>
                 </div>
             </div>

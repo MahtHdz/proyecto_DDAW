@@ -1,5 +1,5 @@
 function create_b() {
-  window.location.assign("new-crc-card.html");
+  window.location.assign("NuevaTarjetaCRC.jsp");
 }
 
 function edit_b() {
@@ -13,7 +13,7 @@ function genElements() {
   for (let i = 0; i < ARR_LEN; i++) {
     var figure = document.createElement("figure");
     var img = document.createElement("img");
-    img.setAttribute("src", "../../../assets/images/cards.png");
+    img.setAttribute("src", "assets/images/cards.png");
     img.setAttribute("alt", name);
     var figcaption = document.createElement("figcaption");
     figcaption.textContent = name;
