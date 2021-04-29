@@ -1,5 +1,12 @@
+<%@page import="Pojos.Proyecto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+  String idProject =  request.getParameter("idProyecto");
+  Proyecto.idProyectoActual = Integer.parseInt(idProject);
+%>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,13 +15,25 @@
     <link rel='stylesheet' href='assets/css/libs/normalize.min.css'>
     <link rel='stylesheet' href='assets/css/libs/fontawesome-app.css'>
     <link rel='stylesheet' href='assets/css/libs/all.css'>
+    <link rel='stylesheet' href='assets/css/libs/bootstrap.min.css'>
     <!--
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
     -->
     <link rel="stylesheet" href="assets/css/style_project.css">
-    <title>Poyecto actual</title>
+    <%
+    out.println("<title>");
+    out.println("Proyecto "+idProject+"");
+    out.println("</title>");
+    %>
 </head>
 <body>
+    <%
+        out.println("<div class='px-5'>");
+            out.println("<h1>");
+                out.println("Proyecto "+idProject+"");
+            out.println("</h1>");
+        out.println("</div>");
+    %>
     <div class="options">
         <!--Checar optionBackground para que se muestren las imágenes-->
         <div id="cards" class="option active">

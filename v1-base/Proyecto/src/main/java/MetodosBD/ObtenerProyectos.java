@@ -21,11 +21,12 @@ public class ObtenerProyectos {
             ResultSet Proyectos = SentenciaSQL.executeQuery("SELECT * FROM proyecto WHERE emailUsuario = '"+emailUsuario+"'");
 
             while (Proyectos.next()) {
+                int idBD = Proyectos.getInt("id");
                 String nombreBD = Proyectos.getString("nombre");
                 String descripcionBD = Proyectos.getString("descripcion");
                 String emailUsuarioBD = Proyectos.getString("emailUsuario");
 
-                Proyecto proyecto = new Proyecto(nombreBD, descripcionBD, emailUsuarioBD);
+                Proyecto proyecto = new Proyecto(idBD, nombreBD, descripcionBD, emailUsuarioBD);
                 listaProductos.add(proyecto);
             }
             Proyectos.close();

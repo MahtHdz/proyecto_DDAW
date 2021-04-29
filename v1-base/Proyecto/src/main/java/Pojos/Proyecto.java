@@ -3,22 +3,25 @@ package Pojos;
 
 public class Proyecto {
     
-    private String ID;
+    public static int idProyectoActual;
+    
+    private int ID;
     private String nombre;
     private String descripcion;
     private String emailUsuario;
 
-    public Proyecto(String nombre, String descripcion, String emailUsuario) {
+    public Proyecto(int id, String nombre, String descripcion, String emailUsuario) {
+        this.ID = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.emailUsuario = emailUsuario;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
     
