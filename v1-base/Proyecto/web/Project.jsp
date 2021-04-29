@@ -24,7 +24,7 @@
                     <img src="assets/images/crc_cards_icon.png" alt="">
                 </div>
                 <div class="info">
-                    <div class="main"><a href="crc-cards/menu.html">Tarjetas CRC</a></div>
+                    <div class="main"><a href="MenuTarjetasCRC.jsp">Tarjetas CRC</a></div>
                     <div class="sub">Edita y crea tarjetas CRC.</div>
                 </div>
             </div>
