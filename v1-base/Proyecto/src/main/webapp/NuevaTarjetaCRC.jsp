@@ -1,9 +1,3 @@
-<%-- 
-    Document   : NuevaTarjetaCRC
-    Created on : Apr 29, 2021, 12:36:15 PM
-    Author     : maht_
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +37,6 @@
             </div>
         </form>
     </div>
-    <script src="../.././../assets/js/script-crc-cards-funcs.js"></script>
+    <script src="assets/js/script-crc-cards-funcs.js"></script>
 </body>
 </html>
