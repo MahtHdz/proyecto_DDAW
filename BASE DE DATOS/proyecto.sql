@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2021 at 08:58 PM
+-- Generation Time: Apr 30, 2021 at 05:58 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -37,6 +37,14 @@ CREATE TABLE `historia_usuario` (
   `descripcion` varchar(100) NOT NULL,
   `observaciones` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `historia_usuario`
+--
+
+INSERT INTO `historia_usuario` (`id`, `nombre`, `numero`, `fecha`, `valor`, `tiempo_d`, `descripcion`, `observaciones`) VALUES
+(1, 'ETESECH', 1, '2021-04-15', 44, 22, 'IDFHIOUASDHFPAIUSODHFPASUHDF[OSHDF[OHjsdhflkasjdhflkjashdlkfhsdklfhas\r\nasdjkfhaslkjdfhlaksjdhflkjash', 'IDFHIOUASDHFPAIUSODHFPASUHDF[OSHDF[OHjsdhflkasjdhflkjashdlkfhsdklfhas\r\nasdjkfhaslkjdfhlaksjdhflkjash'),
+(2, 'Jorgito', 2, '2021-04-27', 55, 4, 'IDFHIOUASDHFPAIUSODHFPASUHDF[OSHDF[OHjsdhflkasjdhflkjashdlkfhsdklfhas\r\nasdjkfhaslkjdfhlaksjdhflkjash', 'IDFHIOUASDHFPAIUSODHFPASUHDF[OSHDF[OHjsdhflkasjdhflkjashdlkfhsdklfhas\r\nasdjkfhaslkjdfhlaksjdhflkjash');
 
 -- --------------------------------------------------------
 
@@ -75,6 +83,14 @@ CREATE TABLE `tabla_crc` (
   `id_usuario` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `tabla_crc`
+--
+
+INSERT INTO `tabla_crc` (`id`, `responsabilidad`, `colaborador`, `id_proyecto`, `id_usuario`) VALUES
+(1, 'RRRR', 'RRRR', 3, 1),
+(2, 'RTFWERT', 'WC3C3CD', 3, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -88,6 +104,14 @@ CREATE TABLE `tarjeta_crc` (
   `lista_sub` varchar(50) NOT NULL,
   `id_tabla` int(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tarjeta_crc`
+--
+
+INSERT INTO `tarjeta_crc` (`id`, `clase`, `lista_super`, `lista_sub`, `id_tabla`) VALUES
+(1, 'Prueba', 'Clase S, Clase 3, Clase X, Clase Y', 'Clase 6,Clase 6,Clase 7,Clase 7,Clase 7', 1),
+(2, 'Aura', 'Clase T,Clase A,Clase R', 'Clase T,Clase A,Clase V,Clase E,', 2);
 
 -- --------------------------------------------------------
 
@@ -157,7 +181,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT for table `historia_usuario`
 --
 ALTER TABLE `historia_usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `proyecto`
@@ -169,13 +193,13 @@ ALTER TABLE `proyecto`
 -- AUTO_INCREMENT for table `tabla_crc`
 --
 ALTER TABLE `tabla_crc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tarjeta_crc`
 --
 ALTER TABLE `tarjeta_crc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `usuario`
