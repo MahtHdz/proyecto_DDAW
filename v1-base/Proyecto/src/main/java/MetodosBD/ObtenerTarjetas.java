@@ -34,28 +34,10 @@ public class ObtenerTarjetas {
             try{
                 while (query.next()) {
                     int idTarjeta = query.getInt("id");
-<<<<<<< HEAD
                 System.out.println("Busqueda: "+idTarjeta+"");
                     String clase = query.getString("clase");
                     String lista_super = query.getString("lista_super");
                     String lista_sub = query.getString("lista_sub");
-=======
-                    String clase = query.getString("clase");
-                    String lista_super = query.getString("descripcion");
-                    String lista_sub = query.getString("emailUsuario");
-                    SQL = "SELECT * FROM tabla_crc WHERE id_tarjeta = '" + idTarjeta + "'";
-                    ResultSet tablaTCRC = DBOps.getSQLQuery(SQLQueryOp, SQL);
-                    int size = 0;
-                    if(tablaTCRC != null){
-                        ResultSet tmp = tablaTCRC;
-                        tmp.last();
-                        size = tmp.getRow();
-                    }
-                    TablaTCRC tabla[] = new TablaTCRC[size];
-                    for(int i = 0; i < size; i++)
-                        tabla[i] = new TablaTCRC();
->>>>>>> f7f33087a56880405ac0cbf5cce70f54bb26c175
-                    
                     ObtenerTablaTCRC tabla = new ObtenerTablaTCRC(idTarjeta);
                     
                     TarjetaCRC tarjeta = new TarjetaCRC(idTarjeta, clase, lista_super, lista_sub, tabla.obtenerListaTablaTCRC());
