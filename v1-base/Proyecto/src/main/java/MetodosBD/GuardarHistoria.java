@@ -11,4 +11,11 @@ package MetodosBD;
  */
 public class GuardarHistoria {
     
+    public GuardarHistoria(){}
+    
+    public void sendStory(){
+        
+    }
+    
+    
 }
