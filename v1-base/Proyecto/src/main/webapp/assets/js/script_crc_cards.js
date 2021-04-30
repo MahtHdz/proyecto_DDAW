@@ -3,7 +3,7 @@ function create_b() {
 }
 
 function editCard(idCard) {
-   window.location = "http://localhost:8080/Proyecto/EditarTarjetaCRC?idCard="+idCard+"";
+   window.location = "http://localhost:8080/Proyecto/EditarTarjetaCRC.jsp?idCard="+idCard+"";
 }
 
 //function genElements() {

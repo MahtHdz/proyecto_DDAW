@@ -5,6 +5,8 @@
  */
 package Pojos;
 
+import java.util.List;
+
 /**
  *
  * @author maht_
@@ -14,9 +16,9 @@ public class TarjetaCRC {
     private String clase;
     private String listaSuper;
     private String listaSub;
-    private TablaTCRC tablaTarjetaCRC[];
+    private List<TablaTCRC> tablaTarjetaCRC;
 
-    public TarjetaCRC(int id, String clase, String listaSuper, String listaSub, TablaTCRC[] tablaTarjetaCRC) {
+    public TarjetaCRC(int id, String clase, String listaSuper, String listaSub, List<TablaTCRC> tablaTarjetaCRC) {
         this.id = id;
         this.clase = clase;
         this.listaSuper = listaSuper;
@@ -56,11 +58,13 @@ public class TarjetaCRC {
         this.listaSub = listaSub;
     }
 
-    public TablaTCRC[] getTablaTarjetaCRC() {
+    public List<TablaTCRC> getTablaTarjetaCRC() {
         return tablaTarjetaCRC;
     }
 
-    public void setTablaTarjetaCRC(TablaTCRC[] tablaTarjetaCRC) {
+    public void setTablaTarjetaCRC(List<TablaTCRC> tablaTarjetaCRC) {
         this.tablaTarjetaCRC = tablaTarjetaCRC;
     }
+    
+    
 }

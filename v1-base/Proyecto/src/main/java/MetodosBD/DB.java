@@ -45,7 +45,7 @@ public class DB {
         try{
             SQLQuery = SQLQueryOp.executeQuery(SQL);
         }catch(SQLException e){
-            System.out.println(e.getMessage());
+            System.out.println("No se ha podido hacer la consulta");
         }
         return SQLQuery;
     }

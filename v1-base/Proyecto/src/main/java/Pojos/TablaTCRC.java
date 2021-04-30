@@ -10,8 +10,13 @@ package Pojos;
  * @author maht_
  */
 public class TablaTCRC {
-    
-    public TablaTCRC(){}
+    private String responsabilidad;
+    private String colaborador;
+
+    public TablaTCRC(String responsabilidad, String colaborador) {
+        this.responsabilidad = responsabilidad;
+        this.colaborador = colaborador;
+    }
 
     public String getResponsabilidad() {
         return responsabilidad;
@@ -29,7 +34,6 @@ public class TablaTCRC {
         this.colaborador = colaborador;
     }
     
-    private String responsabilidad;
-    private String colaborador;
+    
 
 }

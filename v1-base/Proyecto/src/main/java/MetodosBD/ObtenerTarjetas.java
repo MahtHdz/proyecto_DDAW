@@ -22,7 +22,9 @@ public class ObtenerTarjetas {
         
         public ObtenerTarjetas(){}
         
-        public void getCards(String emailUsuario, int idProyecto){
+        public ObtenerTarjetas(String emailUsuario, int idProyecto){
+                System.out.println("Entramos abuscar tarjaetas para: "+emailUsuario+"");
+                System.out.println("En el proyecto: "+idProyecto+"");
             
             DB DBOps = new DB();
             DBOps.openConn();
@@ -32,22 +34,14 @@ public class ObtenerTarjetas {
             try{
                 while (query.next()) {
                     int idTarjeta = query.getInt("id");
-                    String clase = query.getString("nombre");
-                    String lista_super = query.getString("descripcion");
-                    String lista_sub = query.getString("emailUsuario");
-                    SQL = "SELECT * FROM tabla_crc WHERE id_tarjeta = '" + idTarjeta + "'";
-                    ResultSet tablaTCRC = DBOps.getSQLQuery(SQLQueryOp, SQL);
-                    int size = 0;
-                    if(tablaTCRC != null){
-                        ResultSet tmp = tablaTCRC;
-                        tmp.last();
-                        size = tmp.getRow();
-                    }
-                    TablaTCRC tabla[] = new TablaTCRC[size];
-                    for(int i = 0; i < size; i++)
-                        tabla[i] = new TablaTCRC();
+                System.out.println("Busqueda: "+idTarjeta+"");
+                    String clase = query.getString("clase");
+                    String lista_super = query.getString("lista_super");
+                    String lista_sub = query.getString("lista_sub");
                     
-                    TarjetaCRC tarjeta = new TarjetaCRC(idTarjeta, clase, lista_super, lista_sub, tabla);
+                    ObtenerTablaTCRC tabla = new ObtenerTablaTCRC(idTarjeta);
+                    
+                    TarjetaCRC tarjeta = new TarjetaCRC(idTarjeta, clase, lista_super, lista_sub, tabla.obtenerListaTablaTCRC());
                     listaTarjetas.add(tarjeta);
                 }
                 query.close();

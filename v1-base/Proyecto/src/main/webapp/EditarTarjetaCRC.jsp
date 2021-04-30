@@ -1,8 +1,3 @@
-<%-- 
-    Document   : EditarTarjetaCRC
-    Created on : Apr 29, 2021, 7:52:27 PM
-    Author     : maht_
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -43,6 +38,6 @@
             </div>
         </form>
     </div>
-    <script src="../.././../assets/js/script-crc-cards-funcs.js"></script>
+    <script src="assets/js/script-crc-cards-funcs.js"></script>
 </body>
 </html>
