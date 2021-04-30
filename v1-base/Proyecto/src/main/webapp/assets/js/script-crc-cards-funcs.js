@@ -2,7 +2,7 @@ var counter = 1;
 const DEFAULT_COL = 2;
 
 function genCRCTable(){
-    const DEFAULT_ROWS = 5;
+    const DEFAULT_ROWS = 4;
 
     const table = document.getElementById("table-inputs");
     
@@ -14,6 +14,7 @@ function genCRCTable(){
             input.setAttribute("type", "text");
             input.setAttribute("name", "row-" + counter + "-" + (j + 1) + "-" + DEFAULT_COL);
             input.setAttribute("id", "row-" + counter + "-" + (j + 1) + "-" + DEFAULT_COL);
+            input.setAttribute("placeholder", "sada");
             half_row.appendChild(input);
             columns.appendChild(half_row);
         }

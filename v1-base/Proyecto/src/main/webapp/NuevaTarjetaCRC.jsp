@@ -14,11 +14,11 @@
         <form action="">
             <div id="inputs">  
                 <label for="form-class-name">Clase: </label>
-                <input type="text" name="class" id="form-class-name"><br><br>
+                <input type="text" name="class"  placeholder="Ejemplo" id="form-class-name"><br><br>
                 <label for="super_classes_list">Lista de superclases: </label>
-                <input type="text" name="super_classes" id="super_classes_list"><br><br>
+                <input type="text" name="super_classes" placeholder="Superclase 1, Superclase 2, Superclase 3, etc." id="super_classes_list"><br><br>
                 <label for="sub_classes_list">Lista de subclases: </label>
-                <input type="text" name="sub_classes" id="sub_classes_list"><br><br><br>
+                <input type="text" name="sub_classes" placeholder="Sublase 1, Sublase 2, Subclase 3, etc." id="sub_classes_list"><br><br><br>
             </div>
             <div id="table">
                 <table id="table-inputs">
