@@ -3,7 +3,7 @@ function create_b(){
 }
 
 function edit_b(){
-  window.location.assign("edit-user-story.html");
+  window.location.assign("EditStory");
 }
 
 function genElements(){

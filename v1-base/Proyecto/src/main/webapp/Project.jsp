@@ -61,9 +61,6 @@
             </div>
         </div>
     </div>
-    <!-- 
-        <a href="http://victorofvalencia-blog.tumblr.com" target="_blank" class="credit">Photos from Victor of Valencia on tumblr</a>
-    -->  
     <script src='assets/js/libs/jquery-project.min.js'></script>
     <script src="assets/js/script_project.js"></script>
 </body>

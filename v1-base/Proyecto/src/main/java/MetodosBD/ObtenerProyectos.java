@@ -14,31 +14,25 @@ public class ObtenerProyectos {
      private List<Proyecto> listaProductos = new ArrayList();
 
     public ObtenerProyectos(String emailUsuario){
+        DB DBOps = new DB();
+        DBOps.openConn();
+        Statement SQLQueryOp = DBOps.getSQLQueryOp();
+        String SQL = "SELECT * FROM proyecto WHERE emailUsuario = '"+emailUsuario+"'";
+        ResultSet result = DBOps.getSQLQuery(SQLQueryOp, SQL);  
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection Conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyecto", "root", "");
-            Statement SentenciaSQL = Conexion.createStatement();
-            ResultSet Proyectos = SentenciaSQL.executeQuery("SELECT * FROM proyecto WHERE emailUsuario = '"+emailUsuario+"'");
-
-            while (Proyectos.next()) {
-                int idBD = Proyectos.getInt("id");
-                String nombreBD = Proyectos.getString("nombre");
-                String descripcionBD = Proyectos.getString("descripcion");
-                String emailUsuarioBD = Proyectos.getString("emailUsuario");
-
+            while (result.next()) {
+                int idBD = result.getInt("id");
+                String nombreBD = result.getString("nombre");
+                String descripcionBD = result.getString("descripcion");
+                String emailUsuarioBD = result.getString("emailUsuario");
                 Proyecto proyecto = new Proyecto(idBD, nombreBD, descripcionBD, emailUsuarioBD);
                 listaProductos.add(proyecto);
             }
-            Proyectos.close();
-            Conexion.close();
-            SentenciaSQL.close();
-      }
-      catch (ClassNotFoundException e) {
-        System.out.println("Clase no encontrada");
-      }
-      catch (SQLException e) {
-        System.out.println(e);
-      }    
+            result.close();
+            DBOps.closeConn();
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
     }
     
     public List<Proyecto> obtenerListaProyectos() {

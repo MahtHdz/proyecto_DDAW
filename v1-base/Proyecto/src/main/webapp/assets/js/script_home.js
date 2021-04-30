@@ -1,11 +1,7 @@
-$(".carousel").swipe({
+function getIDProject(IDProject){
+    window.location = "http://localhost:8080/Proyecto/Project.jsp?idProyecto="+IDProject+"";
+}
 
-  swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-
-    if (direction == 'left') $(this).carousel('next');
-    if (direction == 'right') $(this).carousel('prev');
-
-  },
-  allowPageScroll:"vertical"
-
-});
+function getIDUser(IDUser){
+    window.location = "http://localhost:8080/Proyecto/Project.jsp?idProyecto="+IDUser+"";
+}

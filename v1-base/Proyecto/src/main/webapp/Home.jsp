@@ -45,7 +45,8 @@ String emailUsuario = (String)session.getAttribute("email");
                                         out.println("</a>");
                                         out.println("<p>"+proyecto.getDescripcion()+"</p>");
                                     out.println("</div>");
-                            out.println("<button type='submit' name='idProyecto' class='btn btn-success' onclick='obtenerId(\""+proyecto.getID()+"\")'>"+proyecto.getID()+"</button>");
+                            //out.println("<button type='submit' name='idProyecto' class='btn btn-success' onclick='getIDUser(\""++"\")'>"+proyecto.getID()+"</button>");
+                            out.println("<button type='submit' name='idProyecto' class='btn btn-success' onclick='getIDProject(\""+proyecto.getID()+"\")'>"+proyecto.getID()+"</button>");
                                 out.println("</div>");
                             out.println("</div>");
                     }
@@ -53,19 +54,10 @@ String emailUsuario = (String)session.getAttribute("email");
             </div>
         </div>
     </div>
-    <%
-        out.println("<script>localStorage.setItem('user_email', '"+ emailUsuario +"');</script>");
-    %>
-    
-    <script>
-        function obtenerId(idProyecto){
-            window.location = "http://localhost:8080/Proyecto/Project.jsp?idProyecto="+idProyecto+"";
-        }
-    </script>
     <!-- partial -->
     <script src='assets/js/libs/jquery-home.min.js'></script>
     <script src='assets/js/libs/bootstrap-home.min.js'></script>
     <script src='assets/js/libs/touchSwipe.min.js'></script>
-    <script src="assets/js/script_home.js"></script>
+    <script src="assets/js/libs/script_home_default.js"></script>
 </body>
 </html>

@@ -1,7 +1,10 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package servlets;
 
-import MetodosBD.ObtenerUsuario;
-import Pojos.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -10,10 +13,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "Login", urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
-    public Usuario usuarioSesion;
-    PrintWriter out;
+/**
+ *
+ * @author maht_
+ */
+@WebServlet(name = "EditCard", urlPatterns = {"/EditCard"})
+public class EditCard extends HttpServlet {
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -25,25 +31,22 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html; charset=UTF-8");
-        out = response.getWriter();
-  
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet Login</title>");            
-        out.println("</head>");
-        out.println("<body>");
-        out.println("</body>");
-        out.println("</html>");
-
-        String emailForm = request.getParameter("email");
-        String passwordForm = request.getParameter("pass");
-
-        if (verificarDatos(emailForm, passwordForm, response)) {
-            request.getSession().setAttribute("email", ObtenerUsuario.usuarioLogeado.getEmail());
-            response.sendRedirect("Home.jsp");
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        try {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet EditCard</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet EditCard at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+            response.sendRedirect("EditarTarjetaCRC.jsp");
+        } finally {
+            out.close();
         }
     }
 
@@ -86,16 +89,4 @@ public class Login extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    
-    public boolean verificarDatos(String emailForm, String passwordForm, HttpServletResponse response) {
-        ObtenerUsuario verificacionUsuario = new ObtenerUsuario(emailForm, passwordForm);
-        usuarioSesion = verificacionUsuario.obtenerUsuarioSesion();
-        if(usuarioSesion.getEmail().equals(emailForm)
-                && usuarioSesion.getPassword().equals(passwordForm)){
-            return true;
-            
-        }
-        else
-            return false;
-    }
 }

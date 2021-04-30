@@ -3,7 +3,7 @@ function create_b() {
 }
 
 function edit_b() {
-  window.location.assign("edit-crc-card.html");
+  window.location.assign("EditCard");
 }
 
 function genElements() {

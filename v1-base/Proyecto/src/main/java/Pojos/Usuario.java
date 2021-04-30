@@ -7,12 +7,22 @@ package Pojos;
 
 public class Usuario {
     
+    private int id;
     private String email;
     private String password;
     
-    public Usuario(String email, String password) {
+    public Usuario(int id, String email, String password) {
+        this.id = id;
         this.email = email;
         this.password = password;
+    }
+    
+    public int getID() {
+        return id;
+    }
+
+    public void setID(int id) {
+        this.id = id;
     }
 
     public String getEmail() {
