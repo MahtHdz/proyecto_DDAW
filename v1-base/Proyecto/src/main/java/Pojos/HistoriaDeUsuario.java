@@ -11,6 +11,7 @@ package Pojos;
  */
 public class HistoriaDeUsuario {
     
+    private int id;
     private String nombre;
     private int numero;
     private String fecha;
@@ -19,7 +20,8 @@ public class HistoriaDeUsuario {
     private String descripcion;
     private String observaciones;
 
-    public HistoriaDeUsuario(String nombre, int numero, String fecha, int valor, int tiempo_d, String descripcion, String observaciones) {
+    public HistoriaDeUsuario(int id, String nombre, int numero, String fecha, int valor, int tiempo_d, String descripcion, String observaciones) {
+        this.id = id;
         this.nombre = nombre;
         this.numero = numero;
         this.fecha = fecha;
@@ -28,7 +30,15 @@ public class HistoriaDeUsuario {
         this.descripcion = descripcion;
         this.observaciones = observaciones;
     }
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNombre() {
         return nombre;
     }

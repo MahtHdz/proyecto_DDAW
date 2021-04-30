@@ -11,4 +11,9 @@ package MetodosBD;
  */
 public class GuardarTarjeta {
     
+    public GuardarTarjeta(){}
+    
+    public void sendCard(){
+        
+    }
 }

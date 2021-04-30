@@ -21,7 +21,7 @@ public class ObtenerHistorias {
     
     public ObtenerHistorias(){}
     
-    public void getCards(String emailUsuario, int idProyecto){           
+    public void getStories(String emailUsuario, int idProyecto){           
             DB DBOps = new DB();
             DBOps.openConn();
             Statement SQLQueryOp = DBOps.getSQLQueryOp();
@@ -29,6 +29,7 @@ public class ObtenerHistorias {
             ResultSet query = DBOps.getSQLQuery(SQLQueryOp, SQL);            
             try{
                 while (query.next()) {
+                    int id = query.getInt("id");
                     String nombre = query.getString("nombre");
                     int numero = query.getInt("numero");
                     String fecha = query.getString("fecha");
@@ -36,7 +37,7 @@ public class ObtenerHistorias {
                     int tiempo_d = query.getInt("tiempo_d");
                     String descripcion = query.getString("descripcion");
                     String observaciones = query.getString("observaciones");
-                    HistoriaDeUsuario historia = new HistoriaDeUsuario(nombre, numero, fecha, valor, tiempo_d, descripcion, observaciones);
+                    HistoriaDeUsuario historia = new HistoriaDeUsuario(id, nombre, numero, fecha, valor, tiempo_d, descripcion, observaciones);
                     listaHistorias.add(historia);
                 }
                 query.close();
