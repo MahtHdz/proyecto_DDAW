@@ -43,7 +43,7 @@
                     out.println("<div class='card-body'>");
                         out.println("<h5 class='card-title'>Tarjeta #"+tarjeta.getID()+"</h5>");
                         out.println("<p class='card-text'>Clase: "+tarjeta.getClase()+" <p>");
-                        out.println("<a href='' class='btn btn-warning'><i class='fas fa-edit'></i>&nbsp;&nbsp;</i>Editar</a>");
+                        out.println("<button type='button' class='btn btn-warning' onclick='editCard(\""+tarjeta.getID()+"\")'><i class='fas fa-edit'></i>&nbsp;&nbsp;</i>Editar</button>");
                     out.println("</div>");
                 out.println("</div>");            
             

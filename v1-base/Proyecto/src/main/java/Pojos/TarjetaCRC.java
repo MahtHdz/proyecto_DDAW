@@ -12,6 +12,8 @@ import java.util.List;
  * @author maht_
  */
 public class TarjetaCRC {
+    public static int idTarjetaActual;
+    
     private int id;
     private String clase;
     private String listaSuper;

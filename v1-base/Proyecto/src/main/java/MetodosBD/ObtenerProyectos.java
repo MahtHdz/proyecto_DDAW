@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObtenerProyectos {
-     private List<Proyecto> listaProductos = new ArrayList();
+    private List<Proyecto> listaProductos = new ArrayList();
 
     public ObtenerProyectos(String emailUsuario){
         DB DBOps = new DB();

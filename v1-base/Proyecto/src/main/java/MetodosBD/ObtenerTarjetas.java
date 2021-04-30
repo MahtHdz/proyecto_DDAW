@@ -22,10 +22,7 @@ public class ObtenerTarjetas {
         
         public ObtenerTarjetas(){}
         
-        public ObtenerTarjetas(String emailUsuario, int idProyecto){
-                System.out.println("Entramos abuscar tarjaetas para: "+emailUsuario+"");
-                System.out.println("En el proyecto: "+idProyecto+"");
-            
+        public ObtenerTarjetas(String emailUsuario, int idProyecto){            
             DB DBOps = new DB();
             DBOps.openConn();
             Statement SQLQueryOp = DBOps.getSQLQueryOp();
@@ -34,7 +31,6 @@ public class ObtenerTarjetas {
             try{
                 while (query.next()) {
                     int idTarjeta = query.getInt("id");
-                System.out.println("Busqueda: "+idTarjeta+"");
                     String clase = query.getString("clase");
                     String lista_super = query.getString("lista_super");
                     String lista_sub = query.getString("lista_sub");
