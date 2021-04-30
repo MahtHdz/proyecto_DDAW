@@ -30,8 +30,8 @@ public class ObtenerHistorias {
             try{
                 while (query.next()) {
                     String nombre = query.getString("nombre");
-                    int numero = query.getInt("id");
-                    String fecha = query.getString("nombre");
+                    int numero = query.getInt("numero");
+                    String fecha = query.getString("fecha");
                     int valor = query.getInt("valor");
                     int tiempo_d = query.getInt("tiempo_d");
                     String descripcion = query.getString("descripcion");

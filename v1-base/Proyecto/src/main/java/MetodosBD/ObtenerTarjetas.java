@@ -32,7 +32,7 @@ public class ObtenerTarjetas {
             try{
                 while (query.next()) {
                     int idTarjeta = query.getInt("id");
-                    String clase = query.getString("nombre");
+                    String clase = query.getString("clase");
                     String lista_super = query.getString("descripcion");
                     String lista_sub = query.getString("emailUsuario");
                     SQL = "SELECT * FROM tabla_crc WHERE id_tarjeta = '" + idTarjeta + "'";
