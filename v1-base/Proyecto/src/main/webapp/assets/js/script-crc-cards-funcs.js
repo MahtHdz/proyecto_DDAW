@@ -26,7 +26,8 @@ function addRow(){
     const tableElements = document.getElementsByTagName("tr");
     if (tableElements.length - 1 < 8) {
         const table = document.getElementById("table-inputs");
-        var columns = document.createElement("tr");   
+        var columns = document.createElement("tr");
+        columns.appendChild(head);
         for (let i = 0; i < DEFAULT_COL; i++) {
             var half_row = document.createElement("th");
             var input = document.createElement("input");
