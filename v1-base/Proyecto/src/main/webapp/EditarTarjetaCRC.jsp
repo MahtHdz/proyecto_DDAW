@@ -25,7 +25,7 @@
     <div id="form" class="bg-dark">
         <%
         ObtenerTarjetaCRCPorId obtenerTarjeta = new ObtenerTarjetaCRCPorId(idCard);
-        out.println("<form action=''>");
+        out.println("<form action='EditCard'>");
         out.println("            <div id='inputs'>  ");
         out.println("                <label for='form-class-name'>Clase: </label>");
         out.println("                <input type='text' name='class'  placeholder='Ejemplo' id='form-class-name' value='"+obtenerTarjeta.obtenerTarjeta().getClase()+"'><br><br>");
@@ -48,8 +48,8 @@
         out.println("                  <tr>");
 //        out.println("                    <th>#</th>");
 
-        out.println("                    <th><input type='text' value='"+colaborador.getResponsabilidad()+"'></th>");
-        out.println("                    <th><input type='text' value='"+colaborador.getColaborador()+"'></th>");
+        out.println("                    <th><input type='text' name='responsabilidad' value='"+colaborador.getResponsabilidad()+"'></th>");
+        out.println("                    <th><input type='text' name='colaborador' value='"+colaborador.getColaborador()+"'></th>");
         out.println("                  </tr>");
         }
         out.println("                </tbody>");
