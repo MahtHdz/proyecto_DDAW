@@ -11,11 +11,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="assets/css/style_crc_cards.css">-->
     <link rel="stylesheet" href="assets/css/libs/bootstrap.min.css">
-    <!--<script src="assets/js/libs/prefixfree.min.js"></script>-->
     <script src="https://kit.fontawesome.com/373aa5902a.js" crossorigin="anonymous"></script>
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
     <title>Tarjetas CRC</title>
 </head>
@@ -34,14 +31,14 @@
         
         for(TarjetaCRC tarjeta: obtenerTarjetas.getListaTarjetas()){
         out.println("<div class='d-inline-flex'>");
-                out.println("<div class='card m-3' style='width: 18rem;'>");
-                    out.println("<img src='assets/images/cards.png' class='card-img-top' alt='..'>");
-                    out.println("<div class='card-body'>");
-                        out.println("<h5 class='card-title'>Tarjeta #"+tarjeta.getID()+"</h5>");
-                        out.println("<p class='card-text'>Clase: "+tarjeta.getClase()+" <p>");
-                        out.println("<button type='button' class='btn btn-warning' onclick='editCard(\""+tarjeta.getID()+"\")'><i class='fas fa-edit'></i>&nbsp;&nbsp;</i>Editar</button>");
-                    out.println("</div>");
-                out.println("</div>");            
+            out.println("<div class='card m-3' style='width: 18rem;'>");
+                out.println("<img src='assets/images/cards.png' class='card-img-top' alt='..'>");
+                out.println("<div class='card-body'>");
+                    out.println("<h5 class='card-title'>Tarjeta #"+tarjeta.getID()+"</h5>");
+                    out.println("<p class='card-text'>Clase: "+tarjeta.getClase()+" <p>");
+                    out.println("<button type='button' class='btn btn-warning' onclick='editCard(\""+tarjeta.getID()+"\")'><i class='fas fa-edit'></i>&nbsp;&nbsp;</i>Editar</button>");
+                out.println("</div>");
+            out.println("</div>"); 
         out.println("</div>");
         }   
     %>

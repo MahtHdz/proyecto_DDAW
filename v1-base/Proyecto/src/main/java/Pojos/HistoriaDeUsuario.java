@@ -10,6 +10,7 @@ package Pojos;
  * @author maht_
  */
 public class HistoriaDeUsuario {
+    public static int idHistoriaActual;
     
     private int id;
     private String nombre;
@@ -31,11 +32,11 @@ public class HistoriaDeUsuario {
         this.observaciones = observaciones;
     }
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setID(int id) {
         this.id = id;
     }
 

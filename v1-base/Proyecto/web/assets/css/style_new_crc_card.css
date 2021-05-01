@@ -1,0 +1,42 @@
+body{
+    background-color: #f3f3f3;
+}
+h1{
+    text-align: center;
+}
+
+#form{
+    border-radius: 10px 10px 10px 10px;
+    background-color: #000000f1;
+    margin-right: 20%;
+    margin-left: 20%;
+    color: white;
+    padding: 2.5%;
+}
+
+#form input{
+    border-radius: 10px 10px 10px 10px;
+}
+
+#inputs{
+    text-align: right;
+    margin-left: 5%;
+    margin-right: 15%;
+}
+
+#inputs input {
+    width: 70%;
+}
+
+#table{
+    margin-right: 28%;
+    margin-left: 28%;
+}
+
+#add-row{
+    text-align: center;
+}
+
+#buttons{
+    text-align: center;
+}
