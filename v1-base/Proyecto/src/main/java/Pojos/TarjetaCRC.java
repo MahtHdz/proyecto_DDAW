@@ -28,6 +28,13 @@ public class TarjetaCRC {
         this.tablaTarjetaCRC = tablaTarjetaCRC;
     }
     
+    public TarjetaCRC( String clase, String listaSuper, String listaSub, List<TablaTCRC> tablaTarjetaCRC) {
+        this.clase = clase;
+        this.listaSuper = listaSuper;
+        this.listaSub = listaSub;
+        this.tablaTarjetaCRC = tablaTarjetaCRC;
+    }
+    
     public int getID() {
         return id;
     }

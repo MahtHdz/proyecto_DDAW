@@ -5,8 +5,15 @@
  */
 package servlets;
 
+import MetodosBD.GuardarTarjeta;
+import Pojos.TablaTCRC;
+import Pojos.TarjetaCRC;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,14 +41,47 @@ public class NewCard extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here. You may use following sample code. */
+            System.out.println("Entramos al servlet");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewCard</title>");            
+            out.println("<title>Insertando Tarjeta</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet NewCard at " + request.getContextPath() + "</h1>");
+            
+            String clase = request.getParameter("class");
+            System.out.println("Clase: "+ clase);
+            String superClasses = request.getParameter("super_classes");
+            System.out.println("Clase: "+ superClasses);
+            String subClasses = request.getParameter("sub_classes");
+            System.out.println("Clase: "+ subClasses);
+            
+            String[] tablaCRC_responsabilidades = request.getParameterValues("responsabilidad");
+//            ArrayList<String> responsabilidades = new ArrayList<String>(Arrays.asList(tablaCRC_responsabilidades));
+            
+            String[] tablaCRC_colaboradores = request.getParameterValues("colaborador");
+//            ArrayList<String> colaboradores = new ArrayList<String>(Arrays.asList(tablaCRC_colaboradores));
+            
+            List<TablaTCRC> tabla = new ArrayList<TablaTCRC>();
+            for(int i=0; i<tablaCRC_responsabilidades.length; i++){
+                String responsabilidad = tablaCRC_responsabilidades[i];
+                System.out.println("Responsabilidad "+i+": "+responsabilidad);
+                
+                String colaborador = tablaCRC_colaboradores[i];
+                System.out.println("Colaborador "+i+": "+colaborador);
+                
+                TablaTCRC rc = new TablaTCRC(responsabilidad, colaborador);
+                tabla.add(rc);
+                
+            }
+            TarjetaCRC tarjeta = new TarjetaCRC(clase, superClasses, subClasses, tabla);
+            System.out.println("Se creó la tarjeta y vamos a guardarla");
+            
+            GuardarTarjeta gt = new GuardarTarjeta();
+            gt.sendCard(tarjeta);
+            
+            response.sendRedirect("MenuTarjetasCRC.jsp");
+
             out.println("</body>");
             out.println("</html>");
         } finally {

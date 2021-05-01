@@ -30,15 +30,11 @@
         out.println("<div id='create_b' class='d-flex justify-content-end container my-2'>");
         out.println("<button type='button' class='btn btn-primary' onclick='create_b()'><i class='fas fa-plus'>&nbsp;&nbsp;</i>Nueva tarjeta</button>");
         out.println("</div>");
-//            out.println("<div class='carousel-indicators'>");
-//                out.println("<button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0' class='active' aria-current='true' aria-label='Slide 1'></button>");
-//            out.println("</div>");
         ObtenerTarjetas obtenerTarjetas = new ObtenerTarjetas(ObtenerUsuario.usuarioLogeado.getEmail(), Proyecto.idProyectoActual);
         
-//            out.println("<div class='carousel-inner'>");
-        out.println("<div class='d-flex mx-4'>");
         for(TarjetaCRC tarjeta: obtenerTarjetas.getListaTarjetas()){
-                out.println("<div class='card mx-1' style='width: 18rem;'>");
+        out.println("<div class='d-inline-flex'>");
+                out.println("<div class='card m-3' style='width: 18rem;'>");
                     out.println("<img src='assets/images/cards.png' class='card-img-top' alt='..'>");
                     out.println("<div class='card-body'>");
                         out.println("<h5 class='card-title'>Tarjeta #"+tarjeta.getID()+"</h5>");
@@ -46,28 +42,8 @@
                         out.println("<button type='button' class='btn btn-warning' onclick='editCard(\""+tarjeta.getID()+"\")'><i class='fas fa-edit'></i>&nbsp;&nbsp;</i>Editar</button>");
                     out.println("</div>");
                 out.println("</div>");            
-            
-//                out.println("<div class='carousel-item d-flex justify-content-center'>");
-//                    out.println("<img src='assets/images/cards.png' class='d-block w-20' alt='...'>");
-//                    out.println("<div class='mt-4 carousel-caption d-none d-md-block'>");
-//                        out.println("<div class='bg-secondary my-2'>");
-//                            out.println("<h5 class='text-dark'>Tarjeta número: "+tarjeta.getID()+"</h5>");
-//                        out.println("</div>");
-//                            out.println("<button type='button' class='btn btn-warning' onclick='editCard(\""+tarjeta.getID()+"\")'><i class='fas fa-edit'></i>&nbsp;&nbsp;</i>Editar</button>");
-//                    out.println("</div>");
-//                out.println("</div>");
+        out.println("</div>");
         }   
-        out.println("</div>");   
-//            out.println("</div>");      
-//            out.println("<button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='prev'>");
-//                out.println("<span class='carousel-control-prev-icon' aria-hidden='true'></span>");
-//                out.println("<span class='visually-hidden'>Previous</span>");
-//            out.println("</button>");
-//            out.println("<button class='carousel-control-next' type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide='next'>");
-//                out.println("<span class='carousel-control-next-icon' aria-hidden='true'></span>");
-//                out.println("<span class='visually-hidden'>Next</span>");
-//            out.println("</button>");
-//        out.println("</div>");
     %>
     
         <script src="assets/js/script_crc_cards.js"></script>
