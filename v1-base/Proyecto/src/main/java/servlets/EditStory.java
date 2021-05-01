@@ -44,7 +44,6 @@ public class EditStory extends HttpServlet {
             out.println("<h1>Servlet EditStory at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-            response.sendRedirect("EditarHistoria.jsp");
         } finally {
             out.close();
         }

@@ -1,0 +1,81 @@
+@font-face {
+    font-family: SF;
+    src: url(../fonts/SystemSanFranciscoDisplayRegular.ttf) format("opentype");
+}
+
+@font-face {
+    font-family: SF;
+    src: url(../fonts/SF-UI-Display-Bold.otf) format("opentype");
+    font-weight: bold;
+}
+
+body{
+    font-family: 'SF';
+    margin: 0em;
+    background-color: #f3f3f3;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+#header{
+  font-size: 1.2em;
+  padding-top:1%;
+  padding-right: 1%;
+  padding-bottom: 1%;
+  background-color: black;
+  color: white;
+  text-align: right;
+}
+
+#header a {
+    text-decoration: none;
+}
+
+/* unvisited link */
+#header a:link {
+    color: white;
+}
+
+/* visited link */
+#header a:visited {
+    color: red;
+}
+
+/* mouse over link */
+#header a:hover {
+    color: #00d10a;
+}
+
+/* selected link */
+#header a:active {
+    color: #4a4aff;
+}
+
+#title{
+    font-weight: bold;
+    color: black;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    text-align: center;
+}
+
+#user-data{
+    width: 100%;
+}
+
+#user-img{
+    float: left;
+    margin-top: .5%;
+    padding-left: 10%;
+    width: 20%;
+}
+
+#list-user-data{
+    float:left;
+    margin-top: 2%;
+    width: 60%;
+    color: white;
+    margin-left: 5%;
+    background-color: black;
+    border-radius: 10px 10px 10px 10px;
+}

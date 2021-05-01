@@ -52,7 +52,7 @@ public class EditarHistoria {
             Statement SQLQueryOp = DBOps.getSQLQueryOp();
             String SQL = "UPDATE historia_usuario SET nombre='"+ nombre +"', numero='"+ numero +"', "
                     + "fecha='"+ fecha +"'', valor='"+ valor +"', tiempo_d='"+ tiempo_d +"', "
-                    + "descripcion='"+ descripcion +"', observaciones='"+ observaciones +"' WHERE id='"+ historia.getId() +"'";
+                    + "descripcion='"+ descripcion +"', observaciones='"+ observaciones +"' WHERE id='"+ historia.getID() +"'";
             try{
                 SQLQueryOp.execute(SQL);
                 DBOps.closeConn();
